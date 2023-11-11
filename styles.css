@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  transition: background-color 2s;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.logo {
+  background: #000;
+  color: #f0f0f0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+
+nav ul li:hover {
+  padding: 1rem 2rem;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+nav ul li a {
+  color: #181818;
+  font-size: 1.57rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #0d47a1;
+  transform: rotate(3deg);
+}
+
+/* Styles for the toggle */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+
+  width: 0;
+
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+
+  cursor: pointer;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background-color: #ccc;
+
+  transition: 0.4s;
+
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+
+  content: "";
+
+  height: 26px;
+
+  width: 26px;
+
+  left: 4px;
+
+  bottom: 4px;
+
+  background-color: white;
+
+  transition: 0.4s;
+
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* HERO SECTION */
+
+.content--hero h1 {
+  font-size: 3.33rem;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  letter-spacing: 0.2rem;
+}
+
+.content--hero p {
+  font-size: 2.33rem;
+  padding-bottom: 2rem;
+  /* padding-top: 3rem; */
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+}
+
+.btn {
+  background-color: #2196f3;
+  display: inline-block;
+  padding: 1rem 2.57rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0d47a1;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+.btn a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+/* Dark Mode styles */
+
+.content {
+  color: black; /* Default text color for light mode */
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5rem;
+  text-align: center;
+}
+
+.dark-mode .content {
+  color: #b1b4b6; /* Text color for dark mode */
+}
+
+.dark-mode {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.dark-mode .slider {
+  background-color: #888;
+}
+
+.dark-mode input:checked + .slider {
+  background-color: #0d47a1;
+}
+
+.dark-mode input:checked + .slider:before {
+  background-color: #fbcdbb;
+}
+
+.earth {
+  width: 273px;
+  height: 273px;
+  aspect-ratio: 1 / 1;
+  background: url("https://img.freepik.com/free-photo/planet-earth-topography-nature-view-generated-by-ai_188544-15333.jpg?t=st=1699692752~exp=1699696352~hmac=550d59a798df3547da2b930156923f6b2ca42b7fb999dddf51f40b42cbcf019a&w=1380")
+    no-repeat center center/cover;
+  border-radius: 50%;
+  /* animation: rotate 10s infinite linear; */
+  animation: backgroundposition 11s infinite linear;
+
+  /* box-shadow: 5px -5px 120px black, 10px 10px 50px rgb(230, 79, 79),
+    -10px -10px 50px rgb(178, 148, 30); */
+
+  box-shadow: rgba(0, 0, 0, 0.263) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.268) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.29) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.17) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+@keyframes backgroundposition {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* RESPONSIVE NAVIGATION */
+
+@media screen and (max-width: 869px) {
+  header {
+    padding: 1rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 591px) {
+  header {
+    padding: 0.1rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    padding: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1.37rem;
+  }
+
+  .switch {
+    width: 50px;
+    height: 24px;
+  }
+
+  .slider:before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .content {
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+    text-align: center; */
+  }
+
+  .content--hero h1 {
+    font-size: 2.57rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem 3rem;
+  }
+
+  .content--hero p {
+    font-size: 1.57rem;
+    padding-bottom: 0 1rem 1.33rem 1rem;
+  }
+}
